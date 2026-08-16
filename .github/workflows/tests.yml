@@ -1,0 +1,43 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: librairie_test_db
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer les tests
+        env:
+          DATABASE_URL: postgresql://user:password@localhost:5432/librairie_test_db
+          DATABASE_URL_TEST: postgresql://user:password@localhost:5432/librairie_test_db
+          SECRET_KEY: cle_de_test_pour_ci
+          ALGORITHM: HS256
+          EXPIRATION_MINUTES: 30
+        run: pytest -v
