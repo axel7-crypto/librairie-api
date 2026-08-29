@@ -120,6 +120,6 @@ Ainsi qu'une table **Utilisateur** dédiée à l'authentification (email, mot de
 
 ## À propos
 
-Projet réalisé dans le cadre d'un apprentissage autonome du développement backend avec FastAPI, en repartant d'un exercice de modélisation Merise. Chaque étape (CRUD, sécurité, tests, déploiement...) a été construite progressivement, en cherchant à comprendre le fonctionnement de chaque brique plutôt qu'à simplement faire fonctionner le code.
+Une API REST complète pour la gestion d'une librairie (auteurs, livres, clients, commandes), construite avec FastAPI et PostgreSQL. Le projet couvre l'ensemble du cycle de développement backend : modélisation des données (MERISE), CRUD complet avec relations, authentification JWT, autorisations par rôle, validation des entrées, pagination et filtres de recherche, tests automatisés (pytest), conteneurisation Docker, intégration continue (GitHub Actions) et déploiement en production sur Railway.
 
 **Auteur** : Axel Kouakou — [GitHub](https://github.com/axel7-crypto)
