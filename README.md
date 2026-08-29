@@ -4,7 +4,6 @@ API REST complète développée avec **FastAPI** pour la gestion d'une librairie
 
 🔗 **Documentation interactive en ligne** : [librairie-api-librairie-api.up.railway.app/docs](https://librairie-api-librairie-api.up.railway.app/docs)
 
->  La base de données de production est vide pour l'instant — c'est un projet de démonstration/apprentissage, pas encore alimenté avec de vraies données.
 
 ---
 
